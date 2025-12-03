@@ -128,20 +128,6 @@ Phone: (XXX-XXX-XXXX)
 
 Semper Secure.
 
----
 
-# 🎉 Want a GitHub banner image or logo for EGC Security Group?  
-I can generate:
-
-- **A professional ASCII art header**  
-- **A GitHub-style hero banner**  
-- **A Marine Corps cyber logo**  
-- **A smaller README badge set**  
-
-Just say:
-
-> “Add a GitHub banner”  
-or  
-> “Add badges to the README.”
 ## 📁 Project Structure
 
