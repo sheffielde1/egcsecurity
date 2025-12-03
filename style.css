@@ -1,0 +1,451 @@
+/* ========================= */
+/* GLOBAL */
+/* ========================= */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #e2e8ff; /* readable but not too bright */
+    background: #0b0f19; /* Deep cyber navy */
+}
+
+
+/* ========================= */
+/* NAVBAR */
+/* ========================= */
+
+nav {
+    background: #0a0f1f;
+    border-bottom: 3px solid #b8860b;
+}
+
+nav ul {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav a {
+    color: #e8edff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    text-shadow: 0 0 3px rgba(0,0,0,1);
+}
+
+nav a:hover,
+nav a.active {
+    color: gold;
+    border-bottom: 2px solid gold;
+}
+
+/* ========================= */
+/* HEADER + EAGLE WATERMARK */
+/* ========================= */
+
+header {
+    position: relative;
+    background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url("flag.jpg?v=999");
+    background-size: cover;
+    background-position: center;
+    padding: 50px 20px;
+    text-align: center;
+    color: #ffffff;
+    border-bottom: 6px solid #b8860b;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.6);
+    text-shadow: 2px 2px 6px rgba(0,0,0,1);
+}
+
+.eagle-watermark {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    width: 140px;
+    height: 140px;
+    background: url("cyber.jpg");
+    background-size: cover;
+    opacity: 0.18;
+    filter: grayscale(100%);
+}
+
+/* Dynamic hero strip */
+.hero-strip {
+    margin: 18px auto 10px;
+    display: inline-block;
+    padding: 8px 18px;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 215, 0, 0.7);
+    background: linear-gradient(90deg, rgba(13,110,253,0.2), rgba(255,215,0,0.2));
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-strip::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -30%;
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.45), transparent);
+    animation: heroSweep 3s infinite;
+}
+
+@keyframes heroSweep {
+    0% { transform: translateX(0); opacity: 0; }
+    30% { opacity: 1; }
+    100% { transform: translateX(350%); opacity: 0; }
+}
+
+/* ========================= */
+/* VETERAN RIBBON */
+/* ========================= */
+
+.veteran-ribbon {
+    background: linear-gradient(90deg, #8b0000, #b30000, #8b0000);
+    color: white;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 2px solid gold;
+    animation: ribbonPulse 3s infinite ease-in-out;
+    text-shadow: 1px 1px 4px rgba(0,0,0,1);
+}
+
+@keyframes ribbonPulse {
+    0% { box-shadow: 0 0 8px gold; }
+    50% { box-shadow: 0 0 18px red; }
+    100% { box-shadow: 0 0 8px gold; }
+}
+
+/* ========================= */
+/* CYBER BORDERS / SECTIONS */
+/* ========================= */
+
+.cyber-border {
+    border: 2px solid #4da3ff;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 20px auto;
+    width: 80%;
+    background: #0f1320; /* solid dark for readability */
+    box-shadow: 0 0 20px rgba(77,163,255,0.4);
+    animation: borderGlow 4s infinite alternate;
+}
+
+@keyframes borderGlow {
+    0% { box-shadow: 0 0 10px rgba(77,163,255,0.3); }
+    100% { box-shadow: 0 0 25px rgba(255,50,50,0.6); }
+}
+
+.cyber-border p {
+    color: #d0d8f0;
+    text-shadow: 0 0 4px rgba(0,0,0,0.9);
+}
+
+.cyber-border h2 {
+    color: #ffffff;
+    text-shadow: 0 0 6px rgba(0,0,0,1);
+}
+
+/* ========================= */
+/* THREAT DASHBOARD */
+/* ========================= */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.dash-card {
+    background: #10162a;
+    border-radius: 10px;
+    padding: 14px;
+    border: 1px solid rgba(77,163,255,0.7);
+    box-shadow: 0 0 12px rgba(0,0,0,0.7);
+}
+
+.dash-label {
+    font-size: 14px;
+    color: #9fb3ff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.dash-number {
+    font-size: 26px;
+    font-weight: bold;
+    margin-top: 6px;
+    color: #ffffff;
+}
+
+.dash-sub {
+    font-size: 13px;
+    color: #b7c3ff;
+    margin-top: 4px;
+}
+
+.dash-row {
+    margin-top: 18px;
+}
+
+.dash-ip-list {
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.dash-ip-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.dash-ip {
+    color: #c5d2ff;
+}
+
+/* ========================= */
+/* SERVICES + RIPPLE EFFECT */
+/* ========================= */
+
+.service-box {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    background: #10152a;
+    border-radius: 10px;
+    border: 1px solid rgba(77,163,255,0.7);
+}
+
+.service-box summary {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    color: #e8f0ff;
+    text-shadow: 0 0 5px rgba(0,0,0,1);
+    transition: 0.3s;
+    list-style: none;
+}
+
+.service-box[open] summary {
+    color: gold;
+}
+
+.service-box p {
+    margin-top: 10px;
+    line-height: 1.5;
+    color: #e6ecff;
+    text-shadow: 0 0 4px rgba(0,0,0,1);
+}
+
+/* Glow ripple on hover */
+.service-box:hover::after {
+    content: "";
+    position: absolute;
+    width: 250%;
+    height: 250%;
+    top: -75%;
+    left: -75%;
+    background: radial-gradient(circle, rgba(77,163,255,0.35) 0%, transparent 70%);
+    animation: ripplePulse 1.2s ease-out forwards;
+}
+
+@keyframes ripplePulse {
+    from { transform: scale(0.1); opacity: 0.9; }
+    to   { transform: scale(1.4); opacity: 0; }
+}
+
+/* ========================= */
+/* WHY CHOOSE EGC */
+/* ========================= */
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-top: 18px;
+    align-items: stretch;
+}
+
+.why-card {
+    background: #10162a;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    border: 1px solid rgba(184,134,11,0.8);
+    box-shadow: 0 0 16px rgba(0,0,0,0.8);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    /* NEW: make all cards equal height */
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.why-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(255,215,0,0.5);
+}
+
+.why-icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.why-title {
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #ffe08a;
+}
+
+/* ========================= */
+/* CERTIFICATIONS */
+/* ========================= */
+
+.cert-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.cert-badge {
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid gold;
+    background: linear-gradient(120deg, #1a2138, #3b2b10);
+    font-size: 13px;
+    color: #ffeedd;
+    box-shadow: 0 0 10px rgba(255,215,0,0.4);
+}
+
+.cert-note {
+    font-size: 14px;
+    color: #d0d8f0;
+}
+
+/* ========================= */
+/* FOUNDER CARD */
+/* ========================= */
+
+.founder-card {
+    display: flex;
+    gap: 20px;
+    background: #0c111d; /* solid dark */
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid gold;
+}
+
+.founder-photo {
+    width: 45%;
+    border-radius: 10px;
+    border: 3px solid #4da3ff;
+}
+
+.founder-text {
+    width: 55%;
+    font-size: 17px;
+    color: #f0f3ff;
+    text-shadow: 0 0 4px rgba(0,0,0,1);
+}
+
+/* ========================= */
+/* CONTACT BUTTONS */
+/* ========================= */
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.contact-btn {
+    padding: 12px 22px;
+    background: #0d6efd;
+    border: 2px solid #4da3ff;
+    color: #f0f6ff;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0 0 4px rgba(0,0,0,1);
+}
+
+.contact-btn:hover {
+    background: #4da3ff;
+    border-color: gold;
+    box-shadow: 0 0 12px gold;
+}
+
+/* ========================= */
+/* FOOTER + ROTATING CYBER GRID */
+/* ========================= */
+
+footer {
+    position: relative;
+    text-align: center;
+    padding: 15px;
+    color: #d4ddff;
+    text-shadow: 0 0 3px rgba(0,0,0,1);
+    overflow: hidden;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image:
+        linear-gradient(0deg, rgba(0,255,255,0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,255,0.15) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: rotateGrid 20s linear infinite;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+@keyframes rotateGrid {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+footer p {
+    position: relative;
+    z-index: 2;
+}
+
+/* ========================= */
+/* HACKER CURSOR EFFECT */
+/* ========================= */
+
+body, button, a, summary, input {
+    cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAALCAYAAACprHcmAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB+cFBAwuN5pSxb0AAABWSURBVBjTY2RgYPjPgAkwMjAy/h+Ef0D4jxiGQYAxkCDGQYAxGIoBixckzADGcLIMIA2Grg1EDyFFAiSgHPQGgA8TEBqAFGgB3gAiBaMGAYQwA8gMAa7mHehW6cgAAAABJRU5ErkJggg==") 2 2, auto;
+}
+
+a:hover, summary:hover, .contact-btn:hover {
+    animation: hackerBlink 0.8s infinite steps(2);
+}
+
+@keyframes hackerBlink {
+    0% { opacity: 1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1; }
+}
